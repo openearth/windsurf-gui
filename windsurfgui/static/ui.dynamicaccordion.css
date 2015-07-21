@@ -1,0 +1,17 @@
+.ui-dynamicaccordion .ui-dynamicaccordion-buttons {
+    margin-bottom:10px;
+}
+
+.ui-dynamicaccordion .ui-accordion h3 .ui-button {
+    margin-top:-3px;
+    margin-right:-3px;
+    width:20px;
+    height:20px;
+    background:white;
+}
+
+.ui-dynamicaccordion .ui-dynamicaccordion-title {
+    height:18px;
+    min-width:100px;
+    display:inline-block;
+}

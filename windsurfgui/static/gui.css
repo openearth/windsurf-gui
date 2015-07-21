@@ -1,0 +1,113 @@
+body {
+    font-family:Helvetica;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    background-image:url(bg.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#container-form {
+    position:relative;
+    width:50%;
+    float:left;
+    overflow-y:scroll;
+}
+
+#form-tabs {
+    width:90%;
+    min-height:300px;
+    border:1px solid #eeeeee;
+    border-radius:10px;
+    background-color:white;
+    opacity:0.9;
+    margin:20px;
+    padding:20px;
+}
+
+.buttons {
+    margin-bottom:10px;
+}
+
+.ui-accordion h3 div.ui-button {
+    float:right;
+    height:25px;
+    margin-top:-6px;
+    margin-right:-6px;
+}
+
+#form-tabs label.slider-value {
+    float:right;
+    text-align:right;
+}
+
+#form-tabs label {
+    display:inline-block;
+    width:130px;
+}
+
+#form-tabs #tab-scenario label {
+    width:50%;
+}
+
+#form-tabs input {
+    width:150px;
+    margin-right:10px;
+}
+
+#container-plots {
+    position:relative;
+    width:40%;
+    height:100%;
+    overflow-y:scroll;
+    float:right;
+}
+
+.ui-slider {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.canvas {
+    width:90%;
+    height:250px;
+    border:1px solid #eeeeee;
+    border-radius:10px;
+    background-color:white;
+    opacity:0.9;
+    margin:20px;
+    float:right;
+}
+
+.canvas .title {
+    font-size: 20;
+    color: white;
+    margin-top: -18px;
+    float: right;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 1px;
+    fill: none;
+}
+
+line {
+    stroke: black;
+}
+
+line.axis,
+line.xTicks,
+line.yTicks {
+    stroke: #999999;
+}
+
+text {
+    font-family: Arial;
+    font-size: 9pt;
+}
+text.xLabel,
+text.yLabel {
+    fill: #999999;
+}

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>The Windsurf model</title>
+    <link rel="stylesheet" type="text/css" href="${request.static_url('windsurfgui:static/gui.css')}" />
+    <link rel="stylesheet" type="text/css" href="${request.static_url('windsurfgui:static/jquery-ui.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="${request.static_url('windsurfgui:static/jquery-ui.structure.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="${request.static_url('windsurfgui:static/jquery-ui.theme.min.css')}" />
+    <link rel="stylesheet" type="text/css" href="${request.static_url('windsurfgui:static/ui.dynamicaccordion.css')}" />
+    <script src="${request.static_url('windsurfgui:static/jquery-1.11.3.min.js')}" language="javascript"></script>
+    <script src="${request.static_url('windsurfgui:static/jquery-ui.min.js')}" language="javascript"></script>
+    <script src="${request.static_url('windsurfgui:static/ui.dynamicaccordion.js')}" language="javascript"></script>
+    <script src="${request.static_url('windsurfgui:static/d3.min.js')}" language="javascript"></script>
+    <script src="${request.static_url('windsurfgui:static/gui.js')}" language="javascript"></script>
+    <script language="javascript">
+      init();
+    </script>
+  </head>
+  <body>
+
+    <div id="container-form">
+      <div id="form-tabs">
+        <ul>
+          <li><a href="#tab-scenario">Scenario</a></li>
+          <li><a href="#tab-regimes">Regimes</a></li>
+          <li><a href="#tab-settings">Settings</a></li>
+        </ul>
+        <div id="tab-scenario"></div>
+        <div id="tab-regimes"></div>
+        <div id="tab-settings"></div>
+      </div>
+    </div>
+    
+    <div id="container-plots">
+      <div class="canvas" id="canvas-wl"></div>
+      <div class="canvas" id="canvas-waves"></div>
+      <div class="canvas" id="canvas-wind"></div>
+<!--      <div class="canvas" id="canvas-seddist"></div> -->
+    </div>
+    
+  </body>
+</html>
