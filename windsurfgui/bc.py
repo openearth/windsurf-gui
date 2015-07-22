@@ -73,9 +73,7 @@ class BoundaryConditions:
 
         idx = (t>=t_max-duration/2.) & (t<t_max+duration/2.)
 
-        self.df['wind_speed'].ix[idx] = np.maximum(
-            self.df['wind_speed'].ix[idx],
-            (u_max * np.cos(np.pi*(t-t_max)/duration)**3.)[idx])
+        self.df['wind_speed'].ix[idx] += (u_max * np.cos(np.pi*(t-t_max)/duration)**3.)[idx]
 
 
     def add_surge(self, surge=[0., 1.], Hs_max=[4., 2.], Tp_max=[8., 4.], u_max=[10., 5.],
@@ -85,7 +83,7 @@ class BoundaryConditions:
 
         nsurge = int(self._getrandom(nsurge))
 
-        for i in range(nsurge+1):
+        for i in range(nsurge):
             
             surge_i = self._getrandom(surge, distribution='weibull')
             Hs_max_i = self._getrandom(Hs_max, distribution='normal')
@@ -94,17 +92,11 @@ class BoundaryConditions:
             t_max_i = self._getrandom(t_max, t)
 
             idx = (t>=t_max_i-duration_i/2.) & (t<t_max_i+duration_i/2.)
-            self.df['water_level'].ix[idx] = np.maximum(
-                self.df['water_level'].ix[idx],
-                (surge_i * np.cos(np.pi*(t-t_max_i)/duration_i)**2.)[idx])
+            self.df['water_level'].ix[idx] += (surge_i * np.cos(np.pi*(t-t_max_i)/duration_i)**2.)[idx]
             
             idx = (t>=t_max_i-duration_i/2.*3.) & (t<t_max_i+duration_i/2.*3.)
-            self.df['wave_height'].ix[idx] = np.maximum(
-                self.df['wave_height'].ix[idx],
-                (Hs_max_i * np.cos(np.pi*(t-t_max_i)/duration_i/3.)**2.)[idx])
-            self.df['wave_period'].ix[idx] = np.maximum(
-                self.df['wave_period'].ix[idx],
-                (Tp_max_i * np.cos(np.pi*(t-t_max_i)/duration_i/3.))[idx])
+            self.df['wave_height'].ix[idx] += (Hs_max_i * np.cos(np.pi*(t-t_max_i)/duration_i/3.)**2.)[idx]
+            self.df['wave_period'].ix[idx] += (Tp_max_i * np.cos(np.pi*(t-t_max_i)/duration_i/3.))[idx]
             
             self.add_wind(u_max, duration=duration_i*3., t_max=t_max_i)
         
