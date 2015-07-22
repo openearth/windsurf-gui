@@ -423,9 +423,9 @@ function create_scenarioitem(obj, type) {
         break;
     case "surge":
         create_sliders(obj, [{"name": "nsurge",
-                              "label": "Number of surges",
+                              "label": "Surges per year",
                               "range": [0, 100],
-                              "values": [1, 3],
+                              "value": 10,
                               "units": ""},
                              {"name": "surge",
                               "label": "Peak surge height",

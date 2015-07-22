@@ -81,10 +81,10 @@ class BoundaryConditions:
     
         t = np.asarray(self.df.index)
 
-        nsurge = int(self._getrandom(nsurge))
+        nsurge = np.maximum(1, int(np.round(nsurge * (self.duration / 365.25 / 24 / 3600))))
 
         for i in range(nsurge):
-            
+
             surge_i = self._getrandom(surge, distribution='weibull')
             Hs_max_i = self._getrandom(Hs_max, distribution='normal')
             Tp_max_i = self._getrandom(Tp_max, distribution='normal')
