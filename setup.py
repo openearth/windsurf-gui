@@ -13,6 +13,9 @@ requires = [
     'pyramid_chameleon',
     'pyramid_debugtoolbar',
     'waitress',
+    'numpy',
+    'pandas',
+    'matplotlib',
     ]
 
 setup(name='windsurf-gui',
